@@ -19,8 +19,8 @@ jobs:
         run: npm ci
 
       # Build the package
-      - name: Build
-        run: npm run build
+#      - name: Build
+#        run: npm run build
 
       # Publish to NPM
       - name: Publish to NPM
