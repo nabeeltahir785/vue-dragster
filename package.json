@@ -1,6 +1,6 @@
 {
   "name": "@nabeel/vue-dragster",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "An easy-to-use drag and drop library for Vue 3 with touch support",
   "author": "Your Name",
   "license": "MIT",
