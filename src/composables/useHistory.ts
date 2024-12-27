@@ -5,7 +5,8 @@ export function useHistory(options: UndoRedoOptions = {}) {
   const state = ref<HistoryState>({
     past: [],
     future: [],
-    maxSize: options.maxHistorySize || 50
+    maxSize: options.maxHistorySize || 50,
+    currentIndex: 0
   });
 
   const canUndo = computed(() => state.value.past.length > 0);
@@ -20,7 +21,8 @@ export function useHistory(options: UndoRedoOptions = {}) {
     state.value = {
       past: [...state.value.past, newOperation].slice(-state.value.maxSize!),
       future: [],
-      maxSize: state.value.maxSize
+      maxSize: state.value.maxSize,
+      currentIndex: 0
     };
   };
 
@@ -31,7 +33,8 @@ export function useHistory(options: UndoRedoOptions = {}) {
     state.value = {
       past: state.value.past.slice(0, -1),
       future: [...state.value.future, operation],
-      maxSize: state.value.maxSize
+      maxSize: state.value.maxSize,
+      currentIndex: 0
     };
 
     options.onUndo?.(operation);
@@ -45,7 +48,8 @@ export function useHistory(options: UndoRedoOptions = {}) {
     state.value = {
       past: [...state.value.past, operation],
       future: state.value.future.slice(0, -1),
-      maxSize: state.value.maxSize
+      maxSize: state.value.maxSize,
+      currentIndex: 0
     };
 
     options.onRedo?.(operation);
@@ -56,7 +60,8 @@ export function useHistory(options: UndoRedoOptions = {}) {
     state.value = {
       past: [],
       future: [],
-      maxSize: state.value.maxSize
+      maxSize: state.value.maxSize,
+      currentIndex: 0
     };
   };
 
