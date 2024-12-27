@@ -57,7 +57,13 @@
     "release": "standard-version",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "preversion": "npm run test",
+    "version": "npm run build && git add -A dist",
+    "postversion": "git push && git push --tags",
+    "release:patch": "npm version patch -m 'Release %s'",
+    "release:minor": "npm version minor -m 'Release %s'",
+    "release:major": "npm version major -m 'Release %s'"
   },
   "dependencies": {
     "vue": "^3.3.0"
