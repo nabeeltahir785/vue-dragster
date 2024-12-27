@@ -1,0 +1,117 @@
+{
+  "name": "@nabeel/vue-dragster",
+  "version": "0.1.0",
+  "description": "An easy-to-use drag and drop library for Vue 3 with touch support",
+  "author": "Your Name",
+  "license": "MIT",
+  "type": "module",
+  "private": false,
+  "keywords": [
+    "vue",
+    "vue3",
+    "draggable",
+    "drag-and-drop",
+    "dnd",
+    "sortable",
+    "touch",
+    "mobile"
+  ],
+  "homepage": "https://github.com/nabeeltahir785/vue3-easy-dnd#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nabeeltahir785/vue3-easy-dnd.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nabeeltahir785/vue3-easy-dnd/issues"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "main": "./dist/vue3-easy-dnd.umd.js",
+  "module": "./dist/vue3-easy-dnd.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/vue3-easy-dnd.es.js",
+      "require": "./dist/vue3-easy-dnd.umd.js"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix",
+    "format": "prettier --write .",
+    "typecheck": "vue-tsc --noEmit",
+    "prepare": "husky install",
+    "prepublishOnly": "npm run build",
+    "release": "standard-version",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "dependencies": {
+    "vue": "^3.3.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.8.1",
+    "@commitlint/config-conventional": "^17.8.1",
+    "@types/node": "^20.8.2",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@vitejs/plugin-vue": "^4.4.0",
+    "@vitest/coverage-v8": "^0.34.6",
+    "@vue/test-utils": "^2.4.6",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-vue": "^9.32.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.4.2",
+    "standard-version": "^9.5.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.11",
+    "vite-plugin-dts": "^3.6.0",
+    "vitepress": "^1.5.0",
+    "vitest": "^0.34.6",
+    "vue-tsc": "^1.8.15"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  },
+  "lint-staged": {
+    "*.{vue,js,ts,jsx,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml}": [
+      "prettier --write"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/yourusername"
+  }
+}

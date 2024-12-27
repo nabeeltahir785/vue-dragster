@@ -1,0 +1,11 @@
+.v-draggable {
+  cursor: move;
+}
+
+.v-draggable.is-dragging {
+  opacity: 0.5;
+}
+
+.v-droppable.is-over {
+  background-color: rgba(0, 0, 0, 0.1);
+}
